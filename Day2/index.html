@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <a href="output.jpg"> Click here to see Output</a>
+    <div>
+        <h1>What Are Variables?</h1>
+        <p>Variables are containers for storing data values in JavaScript. These data values can belong to any data type (e.g., numbers, strings, objects).</p>
+    </div>
+    <hr>
+    <div>
+        <h1>Declaring Variables</h1>
+        <p>In JavaScript, variables can be declared using var, let, or const:</p>
+        <ul>
+            <li><strong>Var: </strong>Used to declare variables globally or locally in a function, with function-level scoping.</li>
+            <li><strong>Let: </strong>Introduced in ES6. Used to declare block-scoped variables, meaning they are confined to the block in which they are defined.</li>
+            <li><strong>Const: </strong>Also introduced in ES6. Used to declare block-scoped constants. Their values cannot be reassigned.
+            </li>
+        </ul>
+    </div><hr>
+    <div>
+        <h1>Variable Declaration Terms</h1>
+        <ul>
+            <li><b>Variable Declaration: </b>creating it without assigning a value.</li>
+        <li><b>Variable Initialization: </b> assigning an initial value when declaring it.</li>
+            <li><b>Variable Re-declaration: </b>Var: Can be re-declared in the same scope.<br>let and const: Cannot be re-declared in the same scope.</li>
+            <li><b>Variable Re-initialization: </b>assigning a new value to an existing variable<br>
+                var and let: Can be re-initialized.<br>const: Cannot be re-initialized after the initial assignment.</li>
+            <li><b>Assignment: </b> storing data in a variable, either during or after declaration.</li>
+            <li><b>Re-assignment: </b>means updating the value of a variable</li>
+        </ul>
+        <h3>Undefined:</h3>
+        <p>When a variable is declared but not initialized, its value is undefined</p>
+        <h3>Not Defined:</h3>
+        <p>When a variable is not declared at all, accessing it will result in a ReferenceError</p>
+        <h3>Hoisting:</h3>
+        <p>Hoisting refers to the default behavior of JavaScript where variable and function declarations are moved to the top of their scope before code execution.</p>
+    </div><hr>
+   <div>
+    <h1>Data Types</h1>
+    <h3>1.Primitive Data Types</h3>
+    <p>Primitive data types are the simplest types of data that hold a single value. They are immutable, meaning their values cannot be changed once they are created.</p>
+    <ul>
+        <li><b>Number: </b>Represents both integers and floating-point numbers.</li>
+        <li><b>String: </b>Represents a sequence of characters enclosed in single quotes ('), double quotes ("), or backticks (`).</li>
+        <li><b>Boolean: </b>Represents a logical value: true or false.</li>
+        <li><b>Undefined: </b>Represents a variable that has been declared but not initialized. The value of an uninitialized variable is undefined by default.</li>
+        <li><b>Null: </b>Represents the intentional absence of any object value or the lack of a value.</li>
+        <li><b>Symbol (ES6): </b>Represents a unique and immutable value. It's mainly used to create unique object property keys.</li>
+        <li><b>BigInt (ES11): </b>Used to represent integers larger than Number.MAX_SAFE_INTEGER (which is 2^53 - 1).</li>
+    </ul>  
+    <h3>2.Non-Primitive Data Types</h3>
+    <p>Non-primitive data types are more complex and can store collections of values. They are mutable, meaning their values can be changed.</p>
+    <ul>
+        <li><b>Array: </b>An array is a special type of object used for storing ordered collections of values, where each element has an index.</li>
+        <li><b>Object: </b>An object is a collection of key-value pairs, where each key is a string (or symbol) and the value can be any data type. Objects can represent more complex data structures.</li>
+        <li><b>Function: </b>A function is a block of code designed to perform a particular task. It is also an object in JavaScript.</li>
+    </ul>
+    <hr>
+    <h1>Typeof Operator</h1>
+    <p>The typeof operator in JavaScript is used to check the data type of a given value or variable. It returns a string representing the type of the operand.</p>
+
+<p>Syntax:  typeof operand</p>
+</div>
+
+<script src="Js.js">
+</script>
+</body>
+</html>

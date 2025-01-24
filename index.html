@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ALL JS Tasks</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fef9e7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #5d0467;
+            margin-bottom: 20px;
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+
+    
+
+        .tasks {
+            display: grid;
+            grid-template-columns: repeat(1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #5dade2;
+            padding: 12px 10px;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 18px;
+            display: block;
+        }
+
+        a:hover {
+            background-color: #2874a6;
+            transform: translateY(-3px);
+        }
+
+        a:active {
+            background-color: #1b4f72;
+        }
+
+        a[href=""] {
+            background-color: #cccccc;
+            color: #666;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+        .tasks p{
+            font-size: 14px;
+        }
+    
+    </style>
+</head>
+<body>
+    <center>
+    <div class="container">
+        <h1>JS Tasks</h1>
+
+        
+        <div class="tasks">
+            <a href="Day1/index.html"><b>Day1 Task</b><br><p>JS Intro<br>using inline, internal, and external methods.</p></a>
+            <a href="Day2/index.html"><b>Day2 Task</b><br><p>Variables<br>Using Primitive and Non Primitive Data Types</p></a>
+        </div>
+    </div>
+    </center>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Intro</title>
+    <link href="Style.css"  rel="stylesheet">
+</head>
+<body>
+    <h1>What is JavaScript (JS)?</h1>
+    <p>JavaScript (JS) is a lightweight, interpreted programming language primarily used to create interactive and dynamic content on web pages. It is a core technology of the World Wide Web, alongside HTML and CSS. JavaScript is versatile and can run on both client-side (browser) and server-side (via environments like Node.js).</p>
+<hr>
+<h1>Why Use JavaScript?</h1>
+<ul>
+    <li><b>Dynamic Content:</b>Enables interactivity (e.g., animations, forms, games) on web pages.</li>
+    <li><b>Cross-Platform:</b>Works on multiple devices and browsers without additional plugins.</li>
+    <li><b>Asynchronous Programming:</b>Facilitates efficient handling of tasks like API calls with Promises and async/await</li>
+    <li><b>Mobile App Development:</b> Builds cross-platform apps using frameworks like React Native and Ionic.</li>
+    <li><b>Animations:</b>Enables visual effects like fading, transitions, and element movement.</li>
+    <li><b>Form Validations:</b>Ensures real-time input checks (e.g., email formats, empty fields) in forms.</li>
+    <li><b>Server-Side Development:</b> Handles back-end logic and APIs using Node.js.</li>
+    <li><b>Game Development:</b>Creates browser-based 2D/3D games using libraries like Phaser and Three.js.</li>
+</ul>
+
+
+<center><button onclick="displayInfo()">Click here to see JS Runtime Environment (External)</button></center>
+<div id="runtime-info"></div>
+<div id="content"></div>
+
+<center><button onclick="alert('JavaScript versions include ES1 (1997), ES3 (1999), ES5 (2009), ES6 (2015), and ES7–ES12 (2016–2021), each adding new features and improvements.')">Click to see Versions(Inline)</button>
+</center>
+
+</body>
+<script src="Js.js"></script>
+<script>
+   
+        // Internal 
+        const heading = document.createElement('h2');
+        heading.id = 'historyHeading';
+        heading.textContent = 'Click to See JavaScript History(Internal)';
+        document.getElementById('content').appendChild(heading);
+
+        const historyDiv = document.createElement('div');
+        historyDiv.id = 'history';
+        document.getElementById('content').appendChild(historyDiv);
+
+        heading.addEventListener('click', function() {
+            const historyText = "Initially, JavaScript was developed by Brendan Eich in just 10 days in 1995 while working for Netscape. It was first called Mocha, then renamed LiveScript, and finally became JavaScript to capitalize on the popularity of Java (despite being unrelated to Java).";
+            document.getElementById('history').textContent = historyText;
+        });
+       
+</script>
+</html>
