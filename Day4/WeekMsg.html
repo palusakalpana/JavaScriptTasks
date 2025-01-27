@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day of the Week Message</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #ffecf0;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .message {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff69b4;
+            padding: 20px;
+            border: 3px dashed #ffb6c1;
+            border-radius: 15px;
+            background-color: #fff0f5;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            width: 80%;
+            display: none; 
+        }
+        .emoji {
+            font-size: 3rem;
+            margin-top: 10px;
+        }
+        input {
+            padding: 10px;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            font-size: 1rem;
+            width: 60%;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="dayInput" placeholder="Enter a day (e.g., Monday)" />
+        <button onclick="displayDayMessage()">Cheer Me Up 🦋</button>
+        <div class="message" id="dayMessage">
+            <div id="dayText"></div>
+            <div class="emoji" id="dayEmoji"></div>
+        </div>
+    </div>
+
+    <script>
+        // Function to get the day input from user and display a message
+        function displayDayMessage() {
+            const dayMessage = document.getElementById("dayMessage");
+            const dayText = document.getElementById("dayText");
+            const dayEmoji = document.getElementById("dayEmoji");
+            const dayInput = document.getElementById("dayInput").value.trim().toLowerCase();
+
+
+            switch (dayInput) {
+                case "monday":
+                    dayText.innerHTML = "New week, new goals!\nLet’s make today amazing!";
+                    dayEmoji.textContent = "💪✨";
+                    break;
+                case "tuesday":
+                    dayText.innerHTML = "Tuesdays are for making progress! You’re doing awesome!";
+                    dayEmoji.textContent = "🚀💼";
+                    break;
+                case "wednesday":
+                    dayText.innerHTML = "Woohoo!, you're halfway to the weekend! Keep going!";
+                    dayEmoji.textContent = "⛰️🏞️";
+                    break;
+                case "thursday":
+                    dayText.innerHTML = "The weekend is in sight, You’re so close!, keep shinning!";
+                    dayEmoji.textContent = "🌟🎉";
+                    break;
+                case "friday":
+                    dayText.innerHTML = "Happy Friday!, The weekend is calling you, It's Time to shine!";
+                    dayEmoji.textContent = "🎊🍹";
+                    break;
+                case "saturday":
+                dayText.innerHTML = "Relax, recharge, and let the good times roll, You deserve it!";
+                dayEmoji.textContent = "🎊🏞️";
+                    break;
+                case "sunday":
+                    dayText.innerHTML = "It’s your day to relax and reflect. Hope you smile little more today!";
+                    dayEmoji.textContent = "☀️🍃";
+                    break;
+                default:
+                    dayText.textContent = "Please enter a valid day of the week.";
+                    dayEmoji.textContent = "❓";
+            }
+
+           
+            dayMessage.style.display = "block";
+        }
+    </script>
+</body>
+</html>

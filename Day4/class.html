@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+// Take user input for the dish name
+let dish = prompt("Enter the name of the dish:");
+let price;
+
+// Use conditional statements to check the dish and assign the price
+if (dish === "Biriyani") {
+  price = 250;
+} else if (dish === "shawarma") {
+  price = 120;
+} else if (dish === "Fried rice") {
+  price = 150;
+} else if (dish === "veg pula") {
+  price = 100;
+} else {
+  price = "Dish not available";
+}
+
+
+if (price === "Dish not available") {
+  alert(price); 
+} else {
+  alert(`The price of ${dish} is: ${price}`); 
+}
+
+
+var num1 = 10; 
+var num2 = 5;  
+var operator = "+"; 
+var result;
+switch (operator) {
+  case "+":
+    result = num1 + num2;
+    break;
+  case "-":
+    result = num1 - num2;
+    break;
+  case "*":
+    result = num1 * num2;
+    break;
+  case "/":
+    if (num2 !== 0) {
+      result = num1 / num2;
+    } else {
+      result = "Division by zero is not allowed";
+    }
+    break;
+  case "%":
+    if (num2 !== 0) {
+      result = num1 % num2;
+    } else {
+      result = "Modulo by zero is not allowed";
+    }
+    break;
+  default:
+    result = "Invalid operator";
+    break;
+}
+console.log(`The result of ${num1} ${operator} ${num2} is: ${result}`);
+
+        </script>
+</body>
+</html>
