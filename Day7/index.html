@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers (1-30)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffebee;
+            padding-top: 50px;
+        }
+        .container {
+            background: #f48fb1;
+            padding: 20px;
+            border-radius: 10px;
+            width: 320px;
+            margin: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: #d81b60;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #880e4f;
+        }
+        .output {
+            margin-top: 15px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Prime Numbers (1-30)</h3>
+        <input type="number" id="start" placeholder="Enter start number" min="1" max="30">
+        <button onclick="findPrimes()">Find Primes</button>
+        <div class="output" id="primeOutput"></div>
+    </div>
+
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+            let count = 0; 
+            
+            // Check divisibility from 1 to num
+            for (let i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    count++; 
+                }
+            }
+
+            return count === 2; 
+        }
+
+        function findPrimes() {
+            const start = parseInt(document.getElementById('start').value);
+            const end = 30; // Fixed end at 30
+
+            if (isNaN(start) || start < 1 || start > 30) {
+                document.getElementById('primeOutput').innerText = "Enter a number between 1-30.";
+                return;
+            }
+
+            let numbers = [];
+            for (let i = start; i <= end; i++) {
+                numbers.push(i);
+            }
+
+            let primes = [];
+            
+            // Using for...in loop to find prime numbers
+            for (let index in numbers) {
+                if (isPrime(numbers[index])) {
+                    primes.push(numbers[index]);
+                }
+            }
+
+            let result = "";
+            // Using for...of loop to display prime numbers
+            for (let prime of primes) {
+                result += prime + " ";
+            }
+
+            document.getElementById('primeOutput').innerText = "Prime Numbers: " + result;
+        }
+    </script>
+
+</body>
+</html>

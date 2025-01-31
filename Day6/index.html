@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String and Array Operations</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            background-color: #52ced0;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        h2 {
+            color: #054a56;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        input, button {
+            width: 80%;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 2px solid #05757f;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        
+        button {
+            background-color: #118397;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #4e8bae;
+        }
+        p {
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+        }
+        .output {
+            background-color: #fff3f3;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Reverse String -->
+    <div class="container">
+        <h2>Reverse a String</h2>
+        <input type="text" id="stringInput" placeholder="Enter a string..." />
+        <button onclick="reverseString()">Reverse String</button>
+        <p id="reverseOutput"></p>
+    </div>
+
+    <!-- Find Even & Odd Numbers and Compare Sums -->
+    <div class="container">
+        <h2>Even and Odd Numbers</h2>
+        <input type="text" id="arrayInput" placeholder="Enter array (comma-separated)" />
+        <button onclick="findEvenOdd()">Find Even & Odd</button>
+        <div id="evenOddOutput" class="output"></div>
+    </div>
+
+    <script src="Script.js">
+        
+    </script>
+
+</body>
+</html>
