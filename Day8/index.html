@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8 Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fce4ec;
+            margin: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #ff4081;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e91e63;
+        }
+        hr{
+            color: #fce4ec;
+        }
+        h1{
+            color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+    <h1>Functions</h1>
+    <div class="container">
+        <h2>Square Function</h2>
+        <input type="number" id="squareInput" placeholder="Enter a number">
+        <button onclick="calculateSquare()">Calculate Square</button>
+        <p>Result: <span id="squareResult"></span></p>
+<hr>
+        <h2>Average Function</h2>
+        <input type="text" id="averageInput" placeholder="Enter numbers separated by commas">
+        <button onclick="calculateAverage()">Calculate Average</button>
+        <p>Result: <span id="averageResult"></span></p>
+<hr>
+        <h2>Vowel Check</h2>
+        <input type="text" id="vowelInput" placeholder="Enter a string">
+        <button onclick="checkVowels()">Check Vowels</button>
+        <p>Result: <span id="vowelResult"></span></p>
+        
+<hr>
+        <h2>Temperature Converter</h2>
+        <input type="number" id="tempInput" placeholder="Enter temperature">
+        <select id="scale">
+            <option value="C">To Celsius</option>
+            <option value="F">To Fahrenheit</option>
+        </select>
+        <button onclick="convertTemperature()">Convert</button>
+        <p>Result: <span id="tempResult"></span></p>
+        <hr>
+        <h2>Prime Number Checker</h2>
+    <label for="numberInput">Enter a number: </label>
+    <input type="number" id="numberInput">
+    <button onclick="checkPrime()">Check</button>
+    <p>Result: <span id="result"></span></p>
+    </div>
+
+    <script src="Script.js">
+        
+    </script>
+</body>
+</html>
