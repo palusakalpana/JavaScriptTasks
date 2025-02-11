@@ -14,7 +14,7 @@
         maindiv.style.color = "green";
     } 
     else {
-        maindiv.innerText = "The password consists of 8 characters.";
+        maindiv.innerText = "The password consists of eight characters.";
         maindiv.style.color = "orange";
     }
 });
