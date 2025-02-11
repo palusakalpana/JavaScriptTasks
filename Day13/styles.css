@@ -1,0 +1,114 @@
+body {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffe6e6;
+    transition: background-color 0.5s;
+}
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #ff4d6d;
+    font-size: 2.5rem;
+}
+img {
+    width: 400px;
+    height: 400px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease-in-out;
+}
+img:hover {
+    transform: scale(1.05);
+}
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff4d6d;
+    color: white;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+button:hover {
+    background-color: #e63950;
+    transform: translateY(-3px);
+}
+input {
+    padding: 10px;
+    border: 2px solid #ff4d6d;
+    border-radius: 25px;
+    width: 220px;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+}
+.fav-section {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff4d6d;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: #6a0572;
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+.dark-mode h1 {
+    color: #ff77a9;
+}
+.dark-mode input {
+    background-color: #333;
+    color: white;
+    border: 2px solid #ff77a9;
+}
+.dark-mode button {
+    background-color: #6a0572;
+}
+.dark-mode button:hover {
+    background-color: #50044e;
+}
+.shape1 { border-radius: 50%; } 
+.shape2 { border-radius: 30%; } 
+.shape3 { border-radius: 15%; } 

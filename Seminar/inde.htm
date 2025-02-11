@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #fce4ec;
+            color: #880e4f;
+        }
+        #moodDisplay {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #ffebee;
+            display: inline-block;
+        }
+        input {
+            padding: 10px;
+            width: 60%;
+            border-radius: 5px;
+            border: 2px solid #880e4f;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            background-color: #ff4081;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌈 Mood Tracker 😊😢🎉</h1>
+    <p>How are you feeling today? 💭</p>
+    <input type="text" id="customMood" placeholder="Type your mood here...">
+    <button onclick="analyzeMood()">Check Mood </button>
+    
+    <p id="moodDisplay"></p>
+    
+    <script>
+        function analyzeMood() {
+            let customMood = document.getElementById("customMood").value.toLowerCase().trim();
+            let moodMessage = "";
+            
+            if (customMood.includes("sad") || customMood.includes("lonely") || customMood.includes("down") || customMood.includes("upset") || customMood.includes("crying") || customMood.includes("bad")) {
+                moodMessage = "💙 Aww, I see you're feeling a little blue today. But don’t worry, storms make rainbows 🌈 and you’ll shine again soon! 💕";
+            } else if (customMood.includes("happy") || customMood.includes("excited") || customMood.includes("joyful") || customMood.includes("great") || customMood.includes("awesome")) {
+                moodMessage = "🌟 Yay! You’re feeling amazing today! Keep spreading those positive vibes like confetti! 🎉✨";
+            } else if (customMood.includes("angry") || customMood.includes("frustrated") || customMood.includes("mad") || customMood.includes("annoyed")) {
+                moodMessage = "🔥 Oh no! Someone’s a little fiery today! Take a deep breath, sip some tea 🍵, and let the worries melt away! ❤️";
+            } else if (customMood.includes("tired") || customMood.includes("sleepy") || customMood.includes("exhausted") || customMood.includes("lazy")) {
+                moodMessage = "😴 Yaaawn! You deserve some rest. Curl up with a cozy blanket and dream sweet dreams! 🌙✨";
+            } else if (customMood.includes("love") || customMood.includes("romantic") || customMood.includes("affection") || customMood.includes("crush")) {
+                moodMessage = "💖 Love is in the air! Whether it's self-love or someone special, keep your heart glowing! 💞✨";
+            } else {
+                moodMessage = "💫 Hmm, that’s an interesting mood! No matter what, you’re amazing and today is your day to shine! 🌟💛";
+            }
+            
+            document.getElementById("moodDisplay").innerHTML = moodMessage;
+        }
+    </script>
+</body>
+</html>

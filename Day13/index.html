@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanam Teri Kasam Casts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Sanam Teri Kasam Casts</h1>
+    
+    <img src="https://v3img.voot.com/resizeMedium,w_810,h_1080/v3Storage/assets/sanam-teri-kasam-3x4-1713981006727.jpg" id="img" alt="Sanam Teri Kasam Poster">
+
+    <div>
+        <button onclick="changeImage('inder')" id="btn1">Inder</button>
+        <button onclick="changeImage('saru')" id="btn2">Saru</button>
+        <button onclick="changeImage('abhimanyu')" id="btn3">Abhimanyu</button>
+        <button onclick="changeImage('Inspector Hari')" id="btn4">Inspector Hari</button>
+    </div>
+
+    <br>
+    <input type="text" id="nameInput" placeholder="Enter your favourite character">
+    <button onclick="updateFavoriteCharacter()">Change</button>
+    <p class="fav-section" id="favCharacter">My favourite character is Inder</p>
+
+    <h2>Class Manipulation</h2>
+    <img src="https://dc-cdn.s3-ap-southeast-1.amazonaws.com/dc-Cover-lrcluem8gi4ktr6ps9sk6j92o4-20160205131818.Medi.jpeg" id="shapeImage" alt="Animated Character Image">
+    <button onclick="classchange()">Click to Change Class</button>
+    <br>
+    <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+    </label>
+    <p>Toggle Theme</p>
+
+    <script src="script.js">
+        
+    </script>
+
+</body>
+</html>
