@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Cart</title>
+    <style>
+        /* Cart Section */
+        .cart-container {
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 30px;
+            width: 50%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+        }
+
+        .cart-list {
+            margin-top: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffebf1;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 8px;
+        }
+        .cart-item img {
+    width: 100px;  
+    height: 100px;
+    object-fit: contain;  
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff; 
+    padding: 5px; 
+}
+
+        .btn-remove {
+            background: #ff3b6e;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .btn-remove:hover {
+            background: #ff1744;
+        }
+
+        .total-amount {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ff3b6e;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 1024px) {
+            .cart-container {
+                width: 70%; 
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cart-container {
+                width: 90%;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .btn-remove {
+                margin-top: 5px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cart-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cart-container">
+        <h2>Shopping Cart</h2>
+        <div class="cart-list"></div>
+        <p class="total-amount"><strong>Total: $0</strong></p>
+    </div>
+    
+    <script>
+        // Retrieve cart items from localStorage
+        let cartItems = JSON.parse(localStorage.getItem("child")) || [];
+    
+        const cartList = document.querySelector(".cart-list");
+        const totalAmount = document.querySelector(".total-amount");
+    
+        function updateCart() {
+            cartList.innerHTML = ""; 
+            let total = 0;
+    
+            if (cartItems.length === 0) {
+                cartList.innerHTML = "<p>Cart is empty</p>";
+            } else {
+                cartItems.forEach((item, index) => {
+                    let cartItem = document.createElement("div");
+                    cartItem.classList.add("cart-item");
+    
+                    let itemImage = document.createElement("img");
+                    itemImage.src = item.image; 
+                    itemImage.alt = item.title;
+        
+    
+                    let itemInfo = document.createElement("p");
+                    itemInfo.innerHTML = `<strong>${item.title}</strong> - $${item.price}`;
+    
+                    let removeBtn = document.createElement("button");
+                    removeBtn.textContent = "Remove";
+                    removeBtn.classList.add("btn-remove");
+                    removeBtn.addEventListener("click", () => {
+                        cartItems.splice(index, 1);
+                        localStorage.setItem("child", JSON.stringify(cartItems)); 
+                        updateCart();
+                    });
+    
+                    cartItem.append(itemImage, itemInfo, removeBtn);
+                    cartList.appendChild(cartItem);
+    
+                    total += parseFloat(item.price);
+                });
+            }
+    
+            totalAmount.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
+        }
+    
+        updateCart();
+    </script>
+
+</body>
+</html>

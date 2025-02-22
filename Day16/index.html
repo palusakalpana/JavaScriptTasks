@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Array Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fce4ec;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: auto;
+        }
+        h2 {
+            color: #d81b60;
+        }
+        pre {
+            background: #c03b55;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+        }
+        button {
+            background-color: #d81b60;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ad1457;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Array Methods</h2>
+        
+        <h3>Task 1: Concat Two Arrays</h3>
+        <label for="sports">Enter your favorite sports:</label>
+        <input type="text" id="sports" placeholder="e.g., football, cricket">
+        <br>
+        <label for="hobbies">Enter your favorite hobbies:</label>
+        <input type="text" id="hobbies" placeholder="e.g., reading, painting">
+        <br>
+        <button onclick="concatArrays()">Concat</button>
+        
+        <h3>Task 2-5: Operate on a Number Array</h3>
+        <label for="numberArray">Enter a number array (comma-separated):</label>
+        <input type="text" id="numberArray" placeholder="e.g., 1,2,3,4,5">
+        <br>
+        <button onclick="addNumbers()">Add</button>
+        <button onclick="spliceNumbers()">Splice</button>
+        <button onclick="sliceNumbers()">Slice</button>
+        <button onclick="joinNumbers()">Join</button>
+        <button onclick="sortNumbers()">Sort</button>
+        <br>
+        <div id="output"></div>
+    </div>
+    
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>

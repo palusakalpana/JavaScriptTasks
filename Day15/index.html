@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffebf0;
+            padding: 50px;
+        }
+        h2 {
+            color: #ff4081;
+        }
+        input {
+            padding: 10px;
+            width: 60%;
+            border: 2px solid #ff4081;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #d81b60;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>String Manipulation Tasks</h2>
+    <input type="text" id="userInput" placeholder="Enter text here">
+    <br>
+    <button onclick="convertToUpper()">Uppercase</button>
+    <button onclick="convertToLower()">Lowercase</button>
+    <button onclick="reverseString()">Reverse String</button>
+    <button onclick="countVowels()">Count Vowels</button>
+    <button onclick="countWords()">Word Count</button>
+    <button onclick="checkPalindrome()">Check Palindrome</button>
+    <p id="result"></p>
+
+    <script>
+        function convertToUpper() {
+            let text = document.getElementById("userInput").value;
+            document.getElementById("result").innerText = text.toUpperCase();
+        }
+
+        function convertToLower() {
+            let text = document.getElementById("userInput").value;
+            document.getElementById("result").innerText = text.toLowerCase();
+        }
+
+        function reverseString() {
+            let text = document.getElementById("userInput").value;
+            let reversed = text.split('').reverse().join('');
+            document.getElementById("result").innerText = reversed;
+        }
+
+        function countVowels() {
+            let text = document.getElementById("userInput").value;
+            let match = text.match(/[aeiouAEIOU]/g);
+            let count = match ? match.length : 0;
+            let vowels = match ? match.join(', ') : "None";
+            document.getElementById("result").innerText = `Vowel Count: ${count}\nVowels: ${vowels}`;
+        }
+
+        function countWords() {
+            let text = document.getElementById("userInput").value.trim();
+            let wordsArray = text ? text.split(/\s+/) : [];
+            let words = wordsArray.length;
+            let wordList = wordsArray.length > 0 ? wordsArray.join(', ') : "None";
+            document.getElementById("result").innerText = `Word Count: ${words}\nWords: ${wordList}`;
+        }
+
+
+        function checkPalindrome() {
+            let text = document.getElementById("userInput").value.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
+            let reversed = text.split('').reverse().join('');
+            if (text === reversed) {
+                document.getElementById("result").innerText = "It is a palindrome";
+            } else {
+                document.getElementById("result").innerText = "Not a palindrome";
+            }
+        }
+    </script>
+</body>
+</html>

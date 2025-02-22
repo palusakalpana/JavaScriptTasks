@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack Hell</title>
+</head>
+<body>
+    <script>
+        function step1(callback) {
+    console.log("Learning HTML");
+    callback();
+}
+
+function step2(callback) {
+    console.log("Learning CSS");
+    callback();
+}
+
+function step3(callback) {
+    console.log("Learning JS");
+    callback();
+}
+
+step1(() => {
+    step2(() => {
+        step3(() => {
+            console.log("Execution complete");
+        });
+    });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Array Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f3f3;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 20px;
+            border-radius: 2px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #ff8c94;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff5c6b;
+        }
+        .output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Interactive Array Operations</h2>
+        <input type="text" id="userInput" placeholder="Enter comma-separated numbers">
+        <button onclick="performOperations()">Process</button>
+        <br>
+        <input type="text" id="stringInput" placeholder="Enter comma-separated words">
+        <button onclick="processStrings()">Filter Strings</button>
+        <div id="output" class="output"></div>
+    </div>
+    
+    <script>
+        function displayOutput(label, data) {
+            let outputDiv = document.getElementById("output");
+            let para = document.createElement("p");
+            para.textContent = `${label}: ${JSON.stringify(data)}`;
+            outputDiv.appendChild(para);
+        }
+        
+        function performOperations() {
+            let input = document.getElementById("userInput").value;
+            let arr = input.split(",").map(Number);
+            document.getElementById("output").innerHTML = "";
+            
+            let doubled = arr.map(val => val * 2);
+            displayOutput("Doubled Array", doubled);
+            
+            let squared = arr.map(val => val * val);
+            displayOutput("Squared Array", squared);
+            
+            let evenNumbers = arr.filter(val => val % 2 === 0);
+            displayOutput("Even Numbers", evenNumbers);
+            
+            let sum = arr.reduce((acc, val) => acc + val, 0);
+            displayOutput("Sum of Numbers", sum);
+            
+            let average = sum / arr.length;
+            displayOutput("Average", average);
+        }
+        
+        function processStrings() {
+            let input = document.getElementById("stringInput").value;
+            let stringArr = input.split(",").map(str => str.trim());
+            let filteredStrings = stringArr.filter(val => val.length >= 5);
+            displayOutput("Strings with length >= 5", filteredStrings);
+        }
+    </script>
+</body>
+</html>
