@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array Iterations & Transformations</title>
+    <title>Add To Cart</title>
     <style>
    body {
     font-family: 'Poppins', sans-serif;
@@ -402,14 +402,28 @@ let maindata = data.map((val) => {
     description.innerText = val.description; 
 
     let btn = document.createElement("button");
-    btn.textContent = "Add to Cart";
-    btn.classList.add("btn"); 
-    btn.addEventListener("click", () => {
-        emparr.push(val);
-        console.log(emparr)
-        localStorage.setItem("child", JSON.stringify(emparr))
-    });
-   
+btn.textContent = "Add to Cart";
+btn.classList.add("btn"); 
+
+btn.addEventListener("click", () => {
+    emparr.push(val);
+    console.log(emparr);
+    localStorage.setItem("child", JSON.stringify(emparr));
+    btn.textContent = "Successfully Added to Cart";
+    btn.style.backgroundColor = "green";
+    btn.style.color = "white";
+    btn.disabled = true;
+    setTimeout(() => {
+        btn.textContent = "Add to Cart";
+        btn.style.backgroundColor = ""; 
+        btn.style.color = ""; 
+        btn.disabled = false;
+    }, 1500);
+});
+
+document.body.appendChild(btn); 
+
+
     child.append(img, title, price, category, description, btn);
     container.appendChild(child);
 });
